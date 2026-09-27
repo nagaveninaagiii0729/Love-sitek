@@ -6026,3 +6026,2061 @@ body::after {
         font-size: 27px;
     }
 }
+#opening::before,
+#opening::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+}
+
+#opening::before{
+    background:
+        radial-gradient(circle at 50% 55%,#d49a4b18,transparent 30%),
+        radial-gradient(circle at 15% 20%,#fff3d510,transparent 25%);
+    animation:candleGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes candleGlow{
+    from{opacity:.5}
+    to{opacity:1}
+}
+
+
+/* ================= PETALS ================= */
+
+.falling-petals{
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+}
+
+.falling-petals i{
+    position:absolute;
+    top:-50px;
+    color:#d9bda0;
+    opacity:.35;
+    font-style:normal;
+    animation:fallPetal linear infinite;
+}
+
+.falling-petals i:nth-child(1){
+    left:8%;
+    font-size:18px;
+    animation-duration:11s;
+}
+
+.falling-petals i:nth-child(2){
+    left:20%;
+    font-size:12px;
+    animation-duration:15s;
+    animation-delay:2s;
+}
+
+.falling-petals i:nth-child(3){
+    left:34%;
+    font-size:20px;
+    animation-duration:12s;
+    animation-delay:5s;
+}
+
+.falling-petals i:nth-child(4){
+    left:51%;
+    font-size:13px;
+    animation-duration:17s;
+    animation-delay:1s;
+}
+
+.falling-petals i:nth-child(5){
+    left:66%;
+    font-size:21px;
+    animation-duration:13s;
+    animation-delay:4s;
+}
+
+.falling-petals i:nth-child(6){
+    left:76%;
+    font-size:15px;
+    animation-duration:16s;
+    animation-delay:7s;
+}
+
+.falling-petals i:nth-child(7){
+    left:88%;
+    font-size:19px;
+    animation-duration:14s;
+    animation-delay:3s;
+}
+
+.falling-petals i:nth-child(8){
+    left:94%;
+    font-size:12px;
+    animation-duration:18s;
+    animation-delay:6s;
+}
+
+@keyframes fallPetal{
+    0%{
+        transform:translateY(-80px) rotate(0deg);
+        opacity:0;
+    }
+
+    15%{
+        opacity:.5;
+    }
+
+    50%{
+        transform:translateY(50vh) translateX(40px) rotate(180deg);
+    }
+
+    100%{
+        transform:translateY(110vh) translateX(-60px) rotate(360deg);
+        opacity:0;
+    }
+}
+
+
+/* ================= OPENING ENVELOPE ANIMATION ================= */
+
+#opening.opening-animation .envelope-flap{
+    transform:rotateX(180deg);
+}
+
+#opening.opening-animation .wax{
+    opacity:0;
+    transform:translateX(-50%) scale(.5);
+}
+
+#opening.opening-animation .inside-letter{
+    transform:translateY(-100px);
+    transition:1s .3s;
+}
+
+#opening.opening-animation .envelope{
+    transform:scale(1.04);
+    transition:1s;
+}
+
+
+/* ================= NAVIGATION ================= */
+
+#nav{
+    position:fixed;
+    z-index:5000;
+    top:0;
+    left:0;
+    width:100%;
+    height:65px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 35px;
+
+    background:#241b15e8;
+    border-bottom:1px solid #d7bd9650;
+    backdrop-filter:blur(12px);
+
+    color:#e5d1ae;
+
+    opacity:0;
+    pointer-events:none;
+
+    transition:.8s;
+}
+
+#nav.visible{
+    opacity:1;
+    pointer-events:auto;
+}
+
+.nav-logo{
+    font:22px "Cormorant Garamond";
+    letter-spacing:3px;
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+}
+
+.nav-links button{
+    background:none;
+    border:0;
+    color:#d9c4a3;
+    font:8px "Special Elite";
+    letter-spacing:2px;
+    cursor:pointer;
+    opacity:.65;
+    transition:.3s;
+}
+
+.nav-links button:hover{
+    opacity:1;
+}
+
+.music-button{
+    width:38px;
+    height:38px;
+    border:1px solid #d7bd9670;
+    background:none;
+    border-radius:50%;
+    color:#e8d3af;
+    cursor:pointer;
+    font-size:17px;
+}
+
+
+/* ================= MAGAZINE ================= */
+
+#magazine{
+    min-height:100vh;
+    padding:100px 20px 70px;
+
+    background:
+        radial-gradient(circle at 20% 20%,#fff8df25,transparent 25%),
+        radial-gradient(circle at 80% 80%,#70452b20,transparent 30%),
+        #bca989;
+
+    position:relative;
+}
+
+#magazine::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:20;
+
+    background-image:
+        repeating-linear-gradient(
+            0deg,
+            transparent 0,
+            transparent 3px,
+            #5a402414 4px
+        );
+
+    opacity:.25;
+}
+
+
+/* ================= PAGE BASE ================= */
+
+.page{
+    position:relative;
+
+    width:min(1050px,94vw);
+    height:min(720px,78vh);
+
+    min-height:620px;
+
+    margin:0 auto 50px;
+
+    overflow:hidden;
+
+    background:#eee1c6;
+
+    box-shadow:
+        0 35px 70px #35231855,
+        0 4px 15px #0002;
+
+    display:none;
+
+    isolation:isolate;
+}
+
+.page.active{
+    display:block;
+}
+
+.page::after{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    pointer-events:none;
+
+    background:
+        radial-gradient(circle at 20% 20%,transparent 0,#533a2110 70%),
+        linear-gradient(#fff4 0 0);
+
+    mix-blend-mode:multiply;
+
+    opacity:.35;
+}
+
+.page-num{
+    position:absolute;
+    top:28px;
+    right:35px;
+
+    font:9px "Special Elite";
+    letter-spacing:3px;
+
+    opacity:.5;
+
+    z-index:10;
+}
+
+
+/* ================= COVER ================= */
+
+.cover-page{
+    background:
+        linear-gradient(90deg,#d9c8a7,#efe2c7 50%,#d6c29f);
+    padding:55px;
+}
+
+.cover-page::before{
+    content:"";
+
+    position:absolute;
+    inset:15px;
+
+    border:1px solid #684c3745;
+
+    pointer-events:none;
+}
+
+.cover-small{
+    position:absolute;
+    top:42px;
+    left:55px;
+
+    font:8px "Special Elite";
+    letter-spacing:4px;
+}
+
+.cover-page h2{
+    position:absolute;
+    top:78px;
+    left:55px;
+
+    font:23px "Libre Baskerville";
+    letter-spacing:5px;
+}
+
+.cover-page h2 span{
+    font:26px "Allura";
+    margin:0 7px;
+}
+
+.cover-line{
+    position:absolute;
+    top:120px;
+    left:55px;
+
+    width:220px;
+    height:1px;
+
+    background:#74533b66;
+}
+
+.cover-page h1{
+    position:absolute;
+
+    left:55px;
+    top:175px;
+
+    font:78px/.82 "Cormorant Garamond";
+    letter-spacing:2px;
+
+    z-index:3;
+}
+
+.cover-page h1 em{
+    font-family:"Allura";
+    font-size:105px;
+    font-weight:400;
+}
+
+.cover-photo{
+    position:absolute;
+
+    right:65px;
+    top:125px;
+
+    width:45%;
+    height:470px;
+
+    padding:12px;
+
+    background:#e8dcc2;
+
+    transform:rotate(2deg);
+
+    box-shadow:0 20px 35px #35231835;
+}
+
+.cover-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+    filter:sepia(.35) saturate(.7) contrast(.95);
+}
+
+.cover-stamp{
+    position:absolute;
+
+    right:55px;
+    bottom:48px;
+
+    width:75px;
+    height:75px;
+
+    border:1px dashed #76513a;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    font:8px "Special Elite";
+    line-height:1.5;
+
+    transform:rotate(-10deg);
+
+    z-index:5;
+}
+
+.cover-bottom{
+    position:absolute;
+
+    left:55px;
+    right:55px;
+    bottom:38px;
+
+    display:flex;
+    justify-content:space-between;
+
+    font:8px "Special Elite";
+    letter-spacing:3px;
+}
+
+
+/* ================= LETTER ================= */
+
+.letter-page{
+    background:#eee3c9;
+}
+
+.letter-page::before{
+    content:"";
+
+    position:absolute;
+    inset:30px;
+
+    border:1px solid #76563c33;
+}
+
+.letter-content{
+    position:absolute;
+
+    left:14%;
+    top:12%;
+
+    width:58%;
+
+    z-index:3;
+}
+
+.eyebrow{
+    font:9px "Special Elite";
+    letter-spacing:4px;
+    color:#7b5942;
+}
+
+.letter-content h2{
+    margin:28px 0;
+
+    font:52px/1.05 "Cormorant Garamond";
+    font-weight:500;
+}
+
+.letter-content h2 em{
+    font-family:"Allura";
+    font-size:70px;
+    font-weight:400;
+}
+
+.letter-content p{
+    max-width:520px;
+
+    margin:17px 0;
+
+    font:17px/1.65 "EB Garamond";
+
+    color:#574234;
+}
+
+.signature{
+    margin-top:30px;
+
+    font:22px "Allura";
+
+    color:#714636;
+}
+
+.signature strong{
+    font-size:30px;
+}
+
+.letter-decoration{
+    position:absolute;
+
+    right:10%;
+    top:18%;
+
+    font-size:150px;
+
+    color:#8a574533;
+
+    transform:rotate(15deg);
+}
+
+
+/* ================= BEGINNING ================= */
+
+.beginning-page{
+    background:#d9ccb0;
+}
+
+.vertical-label{
+    position:absolute;
+
+    left:30px;
+    top:50%;
+
+    transform:rotate(-90deg) translateX(-50%);
+
+    transform-origin:left;
+
+    font:8px "Special Elite";
+    letter-spacing:4px;
+}
+
+.beginning-title{
+    position:absolute;
+
+    left:12%;
+    top:13%;
+}
+
+.beginning-title span{
+    font:10px "Special Elite";
+    letter-spacing:5px;
+    opacity:.5;
+}
+
+.beginning-title h2{
+    margin-top:10px;
+
+    font:70px/.8 "Cormorant Garamond";
+}
+
+.beginning-title em{
+    font:85px "Allura";
+    color:#754638;
+}
+
+.classroom-frame{
+    position:absolute;
+
+    right:9%;
+    top:17%;
+
+    width:39%;
+    height:330px;
+
+    padding:12px;
+
+    background:#f0e3c6;
+
+    transform:rotate(2deg);
+
+    box-shadow:0 18px 30px #47342235;
+}
+
+.classroom-frame img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+
+    filter:sepia(.5) saturate(.7);
+}
+
+.classroom-frame div{
+    margin-top:10px;
+
+    font:8px "Special Elite";
+    letter-spacing:2px;
+}
+
+.classroom-frame small{
+    display:block;
+
+    margin-top:4px;
+
+    font:9px "EB Garamond";
+    letter-spacing:1px;
+}
+
+.beginning-text{
+    position:absolute;
+
+    left:12%;
+    bottom:18%;
+
+    font:22px/1.5 "EB Garamond";
+    font-style:italic;
+}
+
+.handwriting{
+    position:absolute;
+
+    right:12%;
+    bottom:13%;
+
+    font:34px "Allura";
+
+    color:#714333;
+
+    transform:rotate(-5deg);
+}
+
+
+/* ================= CONFESSION ================= */
+
+.confession-page{
+    background:#3d2923;
+    color:#ead9b9;
+}
+
+.confession-page::before{
+    content:"";
+
+    position:absolute;
+    inset:30px;
+
+    border:1px solid #e1cba833;
+}
+
+.confession-date{
+    position:absolute;
+
+    left:10%;
+    top:15%;
+
+    font:100px/.7 "Cormorant Garamond";
+}
+
+.confession-date span{
+    display:block;
+
+    margin-top:15px;
+
+    font:9px "Special Elite";
+    letter-spacing:5px;
+}
+
+.confession-date strong{
+    display:block;
+
+    font:28px "Libre Baskerville";
+    letter-spacing:3px;
+
+    margin-top:10px;
+}
+
+.instagram-card{
+    position:absolute;
+
+    right:12%;
+    top:17%;
+
+    width:45%;
+    height:380px;
+
+    padding:35px;
+
+    border:1px solid #e3ceb04d;
+
+    background:#49332b;
+
+    transform:rotate(-2deg);
+
+    box-shadow:20px 25px 50px #0005;
+}
+
+.ig-top{
+    font:8px "Special Elite";
+    letter-spacing:3px;
+    opacity:.5;
+}
+
+.ig-line{
+    width:100%;
+    height:1px;
+
+    margin:20px 0;
+
+    background:#ddc5a333;
+}
+
+.ig-message{
+    margin-top:40px;
+
+    font:32px/1.2 "Cormorant Garamond";
+}
+
+.ig-response{
+    margin-top:45px;
+
+    font:italic 24px "EB Garamond";
+}
+
+.ig-response span{
+    font:8px "Special Elite";
+    letter-spacing:2px;
+}
+
+.ig-note{
+    position:absolute;
+
+    right:25px;
+    bottom:20px;
+
+    font:25px "Allura";
+    color:#d5ae8c;
+
+    transform:rotate(-5deg);
+}
+
+.red-thread{
+    position:absolute;
+
+    width:220px;
+    height:1px;
+
+    background:#8e4c45;
+
+    left:20%;
+    bottom:20%;
+
+    transform:rotate(-20deg);
+}
+
+.confession-footer{
+    position:absolute;
+
+    bottom:40px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    font:8px "Special Elite";
+    letter-spacing:5px;
+    opacity:.5;
+}
+
+
+/* ================= MIDNIGHT ================= */
+
+.midnight-page{
+    background:
+        radial-gradient(circle at 70% 35%,#574a55,#171823 55%),
+        #181923;
+
+    color:#e7d8c3;
+}
+
+.midnight-page::before{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+        radial-gradient(circle at 20% 30%,#ffffff12 1px,transparent 2px),
+        radial-gradient(circle at 50% 15%,#ffffff10 1px,transparent 2px),
+        radial-gradient(circle at 80% 65%,#ffffff12 1px,transparent 2px);
+
+    background-size:90px 90px;
+}
+
+.stars i{
+    position:absolute;
+    font-style:normal;
+    color:#dfc99f;
+}
+
+.stars i:nth-child(1){left:12%;top:20%}
+.stars i:nth-child(2){left:25%;top:70%}
+.stars i:nth-child(3){left:80%;top:18%}
+.stars i:nth-child(4){left:65%;top:72%}
+.stars i:nth-child(5){left:90%;top:50%}
+.stars i:nth-child(6){left:45%;top:12%}
+
+.moon{
+    position:absolute;
+
+    right:13%;
+    top:18%;
+
+    width:130px;
+    height:130px;
+
+    border-radius:50%;
+
+    background:#e7d7b4;
+
+    box-shadow:0 0 70px #e6d5b455;
+}
+
+.moon::after{
+    content:"";
+
+    position:absolute;
+
+    width:130px;
+    height:130px;
+
+    border-radius:50%;
+
+    background:#2a2934;
+
+    left:35px;
+    top:-15px;
+}
+
+.midnight-date{
+    position:absolute;
+
+    left:13%;
+    top:18%;
+
+    font:9px "Special Elite";
+    letter-spacing:4px;
+}
+
+.midnight-page h2{
+    position:absolute;
+
+    left:13%;
+    top:30%;
+
+    font:66px/.8 "Cormorant Garamond";
+}
+
+.midnight-page h2 em{
+    font:80px "Allura";
+    color:#d9b993;
+}
+
+.midnight-page p{
+    position:absolute;
+
+    left:13%;
+    bottom:20%;
+
+    font:20px/1.5 "EB Garamond";
+    font-style:italic;
+
+    max-width:400px;
+}
+
+.midnight-note{
+    position:absolute;
+
+    right:10%;
+    bottom:15%;
+
+    writing-mode:vertical-rl;
+
+    font:8px "Special Elite";
+    letter-spacing:4px;
+
+    opacity:.5;
+}
+
+
+/* ================= ROSE ================= */
+
+.rose-page{
+    background:#d8c0a8;
+}
+
+.rose-number{
+    position:absolute;
+
+    left:11%;
+    top:15%;
+
+    font:140px/.7 "Cormorant Garamond";
+}
+
+.rose-number small{
+    display:block;
+
+    font:9px "Special Elite";
+    letter-spacing:5px;
+
+    margin-top:20px;
+}
+
+.rose-illustration{
+    position:absolute;
+
+    right:18%;
+    top:15%;
+
+    font-size:180px;
+
+    color:#8b4c43;
+
+    opacity:.8;
+
+    transform:rotate(-15deg);
+}
+
+.rose-page h2{
+    position:absolute;
+
+    left:11%;
+    top:42%;
+
+    font:64px/.8 "Cormorant Garamond";
+}
+
+.rose-page h2 em{
+    font:82px "Allura";
+    color:#744136;
+}
+
+.objects{
+    position:absolute;
+
+    left:11%;
+    bottom:14%;
+
+    display:flex;
+    gap:35px;
+}
+
+.objects div{
+    width:130px;
+
+    padding-top:12px;
+
+    border-top:1px solid #65463666;
+
+    font:8px "Special Elite";
+    letter-spacing:2px;
+}
+
+.objects b{
+    display:block;
+
+    font:26px "Cormorant Garamond";
+
+    margin-bottom:8px;
+}
+
+.rose-quote{
+    position:absolute;
+
+    right:12%;
+    bottom:17%;
+
+    width:220px;
+
+    font:italic 18px "EB Garamond";
+
+    text-align:center;
+}
+
+
+/* ================= PROPOSAL ================= */
+
+.proposal-page{
+    background:#241b17;
+    color:#e8d6b6;
+}
+
+.proposal-image{
+    width:60%;
+    height:100%;
+
+    object-fit:cover;
+
+    filter:sepia(.25) saturate(.7);
+
+    opacity:.8;
+}
+
+.proposal-overlay{
+    position:absolute;
+
+    right:7%;
+    top:20%;
+
+    width:40%;
+
+    z-index:3;
+}
+
+.proposal-overlay small{
+    font:8px "Special Elite";
+    letter-spacing:4px;
+    opacity:.5;
+}
+
+.proposal-overlay h2{
+    margin:30px 0;
+
+    font:65px/.8 "Cormorant Garamond";
+}
+
+.proposal-overlay h2 em{
+    font:90px "Allura";
+    color:#d0aa87;
+}
+
+.proposal-overlay p{
+    font:18px/1.7 "EB Garamond";
+}
+
+.proposal-location{
+    position:absolute;
+
+    bottom:30px;
+    right:7%;
+
+    font:8px "Special Elite";
+    letter-spacing:3px;
+    opacity:.45;
+}
+
+
+/* ================= PORTRAIT ================= */
+
+.portrait-page{
+    background:#eadcc0;
+}
+
+.portrait-label{
+    position:absolute;
+
+    top:40px;
+    left:50px;
+
+    font:8px "Special Elite";
+    letter-spacing:4px;
+}
+
+.portrait-image{
+    position:absolute;
+
+    left:9%;
+    top:14%;
+
+    width:42%;
+    height:500px;
+
+    padding:10px;
+
+    background:#f5ead1;
+
+    transform:rotate(-2deg);
+
+    box-shadow:0 20px 40px #4d362833;
+}
+
+.portrait-image img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    filter:sepia(.3) saturate(.75);
+}
+
+.portrait-page h2{
+    position:absolute;
+
+    right:10%;
+    top:18%;
+
+    font:75px/.75 "Cormorant Garamond";
+}
+
+.portrait-page h2 em{
+    font:100px "Allura";
+    color:#754536;
+}
+
+.qualities{
+    position:absolute;
+
+    right:9%;
+    top:48%;
+
+    width:38%;
+}
+
+.qualities p{
+    padding:12px 0;
+
+    border-bottom:1px solid #71513b40;
+
+    font:16px "EB Garamond";
+}
+
+.qualities b{
+    margin-right:20px;
+
+    font:8px "Special Elite";
+    letter-spacing:2px;
+}
+
+.nickname{
+    position:absolute;
+
+    right:10%;
+    bottom:12%;
+
+    font:15px "EB Garamond";
+    font-style:italic;
+}
+
+.nickname strong{
+    font:30px "Allura";
+    color:#704335;
+}
+
+
+/* ================= SOUNDTRACK ================= */
+
+.soundtrack-page{
+    background:#d7c3a0;
+}
+
+.soundtrack-title{
+    position:absolute;
+
+    left:9%;
+    top:15%;
+
+    font:70px/.75 "Cormorant Garamond";
+}
+
+.soundtrack-title em{
+    font:90px "Allura";
+    color:#75463c;
+}
+
+.vinyl{
+    position:absolute;
+
+    right:13%;
+    top:15%;
+
+    width:300px;
+    height:300px;
+
+    border-radius:50%;
+
+    background:
+        repeating-radial-gradient(
+            circle,
+            #191716 0,
+            #191716 2px,
+            #262321 3px,
+            #191716 5px
+        );
+
+    box-shadow:0 20px 45px #2d211755;
+
+    animation:vinylSpin 14s linear infinite;
+}
+
+.vinyl::before{
+    content:"";
+
+    position:absolute;
+
+    inset:40px;
+
+    border-radius:50%;
+
+    border:1px solid #b09a76;
+
+    opacity:.25;
+}
+
+.vinyl-label{
+    position:absolute;
+
+    width:90px;
+    height:90px;
+
+    border-radius:50%;
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    background:#9b5146;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font:25px "Cormorant Garamond";
+}
+
+.vinyl-label small{
+    font:15px "Allura";
+    margin:0 4px;
+}
+
+@keyframes vinylSpin{
+    to{transform:rotate(360deg)}
+}
+
+.songs{
+    position:absolute;
+
+    left:9%;
+    bottom:17%;
+
+    width:42%;
+}
+
+.songs div{
+    padding:12px 0;
+
+    border-bottom:1px solid #6d4b3540;
+
+    font:20px "EB Garamond";
+}
+
+.songs span{
+    font:8px "Special Elite";
+
+    margin-right:25px;
+
+    opacity:.5;
+}
+
+.soundtrack-note{
+    position:absolute;
+
+    right:12%;
+    bottom:16%;
+
+    font:35px "Allura";
+
+    transform:rotate(-5deg);
+
+    color:#714337;
+}
+
+
+/* ================= GALLERY ================= */
+
+.gallery-page{
+    background:#eee3ca;
+
+    padding:55px;
+}
+
+.gallery-heading{
+    position:absolute;
+
+    left:55px;
+    top:45px;
+
+    font:55px/.75 "Cormorant Garamond";
+    z-index:5;
+}
+
+.gallery-heading em{
+    font:75px "Allura";
+    color:#714336;
+}
+
+.photo-grid{
+    position:absolute;
+
+    left:7%;
+    right:7%;
+    top:18%;
+    bottom:10%;
+
+    display:grid;
+
+    grid-template-columns:1.2fr .8fr 1fr;
+    grid-template-rows:1fr 1fr;
+
+    gap:12px;
+
+    transform:rotate(-1deg);
+}
+
+.photo-grid img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    padding:6px;
+
+    background:#f6ecd7;
+
+    box-shadow:0 8px 15px #49342425;
+
+    filter:sepia(.25) saturate(.75);
+}
+
+.photo-grid img:nth-child(2){
+    transform:translateY(25px) rotate(3deg);
+}
+
+.photo-grid img:nth-child(3){
+    transform:translateY(-15px) rotate(-2deg);
+}
+
+.photo-grid img:nth-child(4){
+    transform:translateY(-10px) rotate(2deg);
+}
+
+.photo-grid img:nth-child(5){
+    transform:translateY(20px) rotate(-3deg);
+}
+
+.photo-grid img:nth-child(6){
+    transform:rotate(2deg);
+}
+
+.gallery-stamp{
+    position:absolute;
+
+    right:45px;
+    top:45px;
+
+    border:1px dashed #74513b;
+
+    padding:10px;
+
+    font:7px "Special Elite";
+    line-height:1.6;
+
+    text-align:center;
+
+    transform:rotate(7deg);
+}
+
+
+/* ================= UNIVERSE ================= */
+
+.universe-page{
+    background:
+        radial-gradient(circle at 50% 40%,#403c4a,#15151d 70%);
+
+    color:#e8dbc4;
+}
+
+.universe-stars{
+    position:absolute;
+
+    width:100%;
+    top:12%;
+
+    text-align:center;
+
+    color:#d8c49d;
+
+    letter-spacing:5px;
+
+    font-size:20px;
+}
+
+.universe-moon{
+    position:absolute;
+
+    right:15%;
+    top:20%;
+
+    width:180px;
+    height:180px;
+
+    border-radius:50%;
+
+    background:#e3d5b5;
+
+    box-shadow:0 0 80px #e2d2ad44;
+}
+
+.universe-moon::after{
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+    height:180px;
+
+    border-radius:50%;
+
+    background:#252530;
+
+    left:50px;
+    top:-20px;
+}
+
+.universe-content{
+    position:absolute;
+
+    left:13%;
+    top:24%;
+
+    max-width:570px;
+}
+
+.universe-content small{
+    font:8px "Special Elite";
+    letter-spacing:4px;
+    opacity:.5;
+}
+
+.universe-content h2{
+    margin-top:35px;
+
+    font:78px/.75 "Cormorant Garamond";
+}
+
+.universe-content h2 em{
+    font:105px "Allura";
+    color:#d7b994;
+}
+
+.universe-content p{
+    margin-top:40px;
+
+    max-width:450px;
+
+    font:20px/1.6 "EB Garamond";
+    font-style:italic;
+}
+
+.constellation{
+    position:absolute;
+
+    right:13%;
+    bottom:17%;
+
+    font:15px "Special Elite";
+    letter-spacing:7px;
+
+    color:#d4bf9d;
+}
+
+
+/* ================= FINAL ================= */
+
+.final-page{
+    background:#eadfc5;
+
+    display:none;
+
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+}
+
+.final-page.active{
+    display:flex;
+}
+
+.final-border{
+    position:absolute;
+
+    inset:25px;
+
+    border:1px solid #76523b55;
+}
+
+.final-content{
+    position:relative;
+    z-index:2;
+}
+
+.final-content small{
+    font:8px "Special Elite";
+    letter-spacing:5px;
+    opacity:.5;
+}
+
+.heart{
+    margin:25px;
+
+    font-size:45px;
+
+    color:#81483d;
+
+    animation:heartbeat 2s infinite;
+}
+
+@keyframes heartbeat{
+    50%{
+        transform:scale(1.15);
+    }
+}
+
+.final-content h2{
+    font:70px/.75 "Cormorant Garamond";
+}
+
+.final-content h2 em{
+    display:block;
+
+    font:90px "Allura";
+
+    color:#744438;
+}
+
+.final-rule{
+    width:160px;
+    height:1px;
+
+    margin:25px auto;
+
+    background:#73513d66;
+}
+
+.final-content p{
+    font:20px "EB Garamond";
+    font-style:italic;
+}
+
+.final-names{
+    margin-top:30px;
+
+    font:25px "Libre Baskerville";
+    letter-spacing:4px;
+}
+
+.final-names span{
+    font:25px "Allura";
+    margin:0 8px;
+}
+
+.final-date{
+    margin-top:12px;
+
+    font:8px "Special Elite";
+    letter-spacing:4px;
+    opacity:.5;
+}
+
+.final-message{
+    margin-top:30px;
+
+    font:7px "Special Elite";
+    letter-spacing:4px;
+    opacity:.4;
+}
+
+
+/* ================= SECRET K ================= */
+
+#secretK{
+    position:fixed;
+
+    right:22px;
+    bottom:20px;
+
+    z-index:7000;
+
+    width:35px;
+    height:35px;
+
+    border-radius:50%;
+
+    border:1px solid #d7bd9670;
+
+    background:#2c211b;
+
+    color:#d9c29d;
+
+    font:17px "Allura";
+
+    cursor:pointer;
+
+    transition:.4s;
+}
+
+#secretK:hover{
+    transform:rotate(15deg) scale(1.1);
+}
+
+#secretOverlay{
+    position:fixed;
+
+    inset:0;
+
+    z-index:10000;
+
+    display:none;
+    align-items:center;
+    justify-content:center;
+
+    background:#170f0ddd;
+
+    backdrop-filter:blur(8px);
+}
+
+#secretOverlay.open{
+    display:flex;
+}
+
+.secret-paper{
+    position:relative;
+
+    width:min(520px,88vw);
+
+    padding:55px;
+
+    background:#e9ddc0;
+
+    box-shadow:0 30px 70px #0008;
+
+    transform:rotate(-1deg);
+}
+
+.secret-paper button{
+    position:absolute;
+
+    right:15px;
+    top:12px;
+
+    border:0;
+    background:none;
+
+    font-size:25px;
+
+    color:#624636;
+
+    cursor:pointer;
+}
+
+.secret-paper small{
+    font:7px "Special Elite";
+    letter-spacing:3px;
+    opacity:.5;
+}
+
+.secret-paper h2{
+    margin:30px 0 15px;
+
+    font:45px "Allura";
+    color:#704336;
+}
+
+.secret-paper p{
+    margin:15px 0;
+
+    font:17px/1.65 "EB Garamond";
+}
+
+.secret-sign{
+    margin-top:30px;
+
+    font:30px "Allura";
+}
+
+.secret-date{
+    display:block;
+
+    margin-top:20px;
+
+    font:7px "Special Elite";
+    letter-spacing:3px;
+
+    opacity:.45;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:800px){
+
+    #nav{
+        height:55px;
+        padding:0 15px;
+    }
+
+    .nav-links{
+        display:none;
+    }
+
+    #magazine{
+        padding:75px 8px 30px;
+    }
+
+    .page{
+        width:96vw;
+        height:78vh;
+        min-height:580px;
+    }
+
+    .cover-page{
+        padding:30px;
+    }
+
+    .cover-small{
+        left:30px;
+        top:35px;
+        font-size:7px;
+    }
+
+    .cover-page h2{
+        left:30px;
+        top:70px;
+        font-size:17px;
+    }
+
+    .cover-line{
+        left:30px;
+        top:105px;
+    }
+
+    .cover-page h1{
+        left:30px;
+        top:140px;
+        font-size:53px;
+    }
+
+    .cover-page h1 em{
+        font-size:75px;
+    }
+
+    .cover-photo{
+        width:55%;
+        height:330px;
+        right:25px;
+        top:220px;
+    }
+
+    .cover-stamp{
+        bottom:25px;
+        right:20px;
+        width:55px;
+        height:55px;
+        font-size:6px;
+    }
+
+    .cover-bottom{
+        left:30px;
+        right:30px;
+        bottom:25px;
+    }
+
+    .letter-content{
+        left:10%;
+        width:78%;
+    }
+
+    .letter-content h2{
+        font-size:40px;
+    }
+
+    .letter-content h2 em{
+        font-size:55px;
+    }
+
+    .letter-content p{
+        font-size:15px;
+    }
+
+    .letter-decoration{
+        right:4%;
+        font-size:100px;
+    }
+
+    .beginning-title{
+        left:10%;
+    }
+
+    .beginning-title h2{
+        font-size:52px;
+    }
+
+    .beginning-title em{
+        font-size:65px;
+    }
+
+    .classroom-frame{
+        width:48%;
+        right:7%;
+        height:250px;
+    }
+
+    .classroom-frame img{
+        height:190px;
+    }
+
+    .beginning-text{
+        left:10%;
+        bottom:14%;
+        font-size:17px;
+    }
+
+    .handwriting{
+        font-size:25px;
+        right:7%;
+    }
+
+    .confession-date{
+        left:8%;
+        top:15%;
+        font-size:75px;
+    }
+
+    .instagram-card{
+        right:7%;
+        width:50%;
+        height:320px;
+        padding:22px;
+    }
+
+    .ig-message{
+        font-size:25px;
+    }
+
+    .midnight-page h2{
+        left:9%;
+        font-size:52px;
+    }
+
+    .midnight-page h2 em{
+        font-size:65px;
+    }
+
+    .moon{
+        width:90px;
+        height:90px;
+    }
+
+    .moon::after{
+        width:90px;
+        height:90px;
+    }
+
+    .rose-number{
+        left:8%;
+        font-size:105px;
+    }
+
+    .rose-illustration{
+        right:8%;
+        font-size:110px;
+    }
+
+    .rose-page h2{
+        left:8%;
+        font-size:50px;
+    }
+
+    .rose-page h2 em{
+        font-size:65px;
+    }
+
+    .objects{
+        left:8%;
+        gap:12px;
+    }
+
+    .objects div{
+        width:90px;
+        font-size:6px;
+    }
+
+    .rose-quote{
+        right:8%;
+        width:160px;
+        font-size:14px;
+    }
+
+    .proposal-image{
+        width:52%;
+    }
+
+    .proposal-overlay{
+        right:5%;
+        width:44%;
+    }
+
+    .proposal-overlay h2{
+        font-size:50px;
+    }
+
+    .proposal-overlay h2 em{
+        font-size:65px;
+    }
+
+    .portrait-image{
+        left:6%;
+        width:43%;
+        height:400px;
+    }
+
+    .portrait-page h2{
+        right:7%;
+        font-size:52px;
+    }
+
+    .portrait-page h2 em{
+        font-size:70px;
+    }
+
+    .qualities{
+        right:6%;
+        width:43%;
+    }
+
+    .qualities p{
+        font-size:13px;
+    }
+
+    .vinyl{
+        width:200px;
+        height:200px;
+        right:8%;
+    }
+
+    .vinyl-label{
+        width:65px;
+        height:65px;
+    }
+
+    .soundtrack-title{
+        left:8%;
+        font-size:50px;
+    }
+
+    .soundtrack-title em{
+        font-size:65px;
+    }
+
+    .songs{
+        left:8%;
+        width:45%;
+    }
+
+    .songs div{
+        font-size:15px;
+    }
+
+    .gallery-page{
+        padding:30px;
+    }
+
+    .gallery-heading{
+        left:30px;
+        font-size:42px;
+    }
+
+    .gallery-heading em{
+        font-size:60px;
+    }
+
+    .photo-grid{
+        left:5%;
+        right:5%;
+        top:22%;
+        bottom:8%;
+    }
+
+    .universe-content{
+        left:8%;
+    }
+
+    .universe-content h2{
+        font-size:58px;
+    }
+
+    .universe-content h2 em{
+        font-size:80px;
+    }
+
+    .universe-moon{
+        width:120px;
+        height:120px;
+        right:8%;
+    }
+
+    .universe-moon::after{
+        width:120px;
+        height:120px;
+    }
+
+    .final-content h2{
+        font-size:52px;
+    }
+
+    .final-content h2 em{
+        font-size:70px;
+    }
+
+    .secret-paper{
+        padding:35px;
+    }
+
+    .opening-content h1{
+        font-size:75px;
+    }
+
+    .opening-content h1 span{
+        font-size:70px;
+    }
+
+    .envelope{
+        width:310px;
+        height:200px;
+    }
+
+    .address{
+        left:22px;
+        top:40px;
+    }
+
+    .address strong{
+        font-size:19px;
+    }
+
+    .address em{
+        width:170px;
+        font-size:11px;
+    }
+}
+
+
+/* ================= FILM GRAIN ================= */
+
+#opening::after{
+    background-image:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.12'/%3E%3C/svg%3E");
+
+    opacity:.3;
+    mix-blend-mode:screen;
+   }
