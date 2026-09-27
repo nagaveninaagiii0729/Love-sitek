@@ -142,9 +142,6 @@ createStars();
 
 
 // =========================================================
-// CURSOR SPARKLE
-// =========================================================
-
 document.addEventListener("mousemove", (event) => {
 
     if (window.innerWidth < 700) return;
@@ -167,24 +164,6 @@ document.addEventListener("mousemove", (event) => {
     sparkle.style.zIndex = "999";
 
     sparkle.style.color =
-        "rgba(130,80,60,.45)";
-
-    sparkle.style.fontSize =
-        Math.random() * 7 + 5 + "px";
-
-    sparkle.style.animation =
-        "cursorSparkle .8s ease forwards";
-
-    document.body.appendChild(sparkle);
-
-    setTimeout(() => {
-
-        sparkle.remove();
-
-    }, 800);
-
-});
-
 
 // =========================================================
 // EXTRA ANIMATIONS
