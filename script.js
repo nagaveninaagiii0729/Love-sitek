@@ -299,3 +299,49 @@ music.addEventListener("error", () => {
     );
 
 });
+/* =========================================================
+   CINEMATIC MAGAZINE OPENING
+========================================================= */
+
+function openMagazine() {
+
+    const opening = document.getElementById("opening");
+    const envelope = document.querySelector(".envelope");
+    const seal = document.getElementById("waxSeal");
+
+    if (!opening || !envelope) return;
+
+    /* break wax */
+    if (seal) {
+        seal.style.transform =
+            "translateX(-50%) scale(1.25) rotate(-12deg)";
+
+        seal.style.opacity = "0";
+
+        seal.style.transition =
+            "all .45s ease";
+    }
+
+    /* open envelope */
+    setTimeout(() => {
+
+        envelope.classList.add("open");
+
+    }, 350);
+
+
+    /* dramatic pause */
+    setTimeout(() => {
+
+        opening.classList.add("opening-hidden");
+
+        document.body.classList.add("magazine-unlocked");
+
+        window.scrollTo({
+            top: 0,
+            behavior: "instant"
+        });
+
+    }, 1700);
+
+}
