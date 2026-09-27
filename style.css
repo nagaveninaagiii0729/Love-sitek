@@ -2947,3 +2947,1099 @@ body {
     background: #b08a5e;
 
    }
+/* =========================================================
+   ✦✦✦ VINTAGE EDITORIAL UPGRADE ✦✦✦
+   Extra layers for the Kusuu × Naagii magazine
+========================================================= */
+
+
+/* =========================================================
+   VINTAGE PAPER CORNERS
+========================================================= */
+
+.page {
+    isolation: isolate;
+}
+
+.page > * {
+    position: relative;
+    z-index: 2;
+}
+
+.page::before {
+
+    z-index: 0;
+
+    border: 1px solid rgba(70,45,30,.12);
+
+    box-shadow:
+        inset 0 0 80px rgba(90,55,30,.08);
+
+}
+
+
+/* =========================================================
+   TORN PAPER EFFECT
+========================================================= */
+
+.letter-page,
+.archive-page,
+.botanical-page,
+.memory-page {
+
+    position: relative;
+}
+
+.letter-page::after,
+.archive-page::after,
+.botanical-page::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    bottom: -1px;
+
+    height: 18px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            transparent 25%,
+            var(--paper) 25%
+        );
+
+    opacity: .55;
+
+    pointer-events: none;
+
+}
+
+
+/* =========================================================
+   VINTAGE CORNER ORNAMENTS
+========================================================= */
+
+.page::marker {
+    display: none;
+}
+
+.page .corner {
+
+    position: absolute;
+
+    width: 80px;
+    height: 80px;
+
+    color: var(--gold);
+
+    opacity: .45;
+
+    font-size: 40px;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   DECORATIVE BOTANICAL CORNERS
+========================================================= */
+
+.cover-page::before {
+
+    content:
+        "❧";
+
+    position: absolute;
+
+    left: 25px;
+    bottom: 25px;
+
+    font-size: 100px;
+
+    color: #b08b5d;
+
+    opacity: .22;
+
+    transform: rotate(-25deg);
+
+}
+
+.cover-page::after {
+
+    content:
+        "❧";
+
+    position: absolute;
+
+    right: 25px;
+    top: 70px;
+
+    font-size: 100px;
+
+    color: #b08b5d;
+
+    opacity: .22;
+
+    transform: rotate(155deg);
+
+}
+
+
+/* =========================================================
+   STAMP COLLECTION
+========================================================= */
+
+.stamp {
+
+    transition:
+        transform .5s ease,
+        opacity .5s ease;
+}
+
+.stamp:hover {
+
+    transform:
+        rotate(0deg)
+        scale(1.08);
+
+    opacity: 1;
+}
+
+
+/* =========================================================
+   VINTAGE POSTAGE STAMP
+========================================================= */
+
+.letter-page::before {
+
+    content:
+        "LOVE\nPOST";
+
+    white-space: pre;
+
+    position: absolute;
+
+    top: 120px;
+    left: 5%;
+
+    width: 65px;
+    height: 75px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    border: 2px dashed var(--wine);
+
+    color: var(--wine);
+
+    font-family: var(--type);
+
+    font-size: 8px;
+
+    line-height: 2;
+
+    transform: rotate(-9deg);
+
+    opacity: .35;
+}
+
+
+/* =========================================================
+   POLAROID PHOTO STYLE
+========================================================= */
+
+.scrap-photo {
+
+    transition:
+        transform .5s ease,
+        box-shadow .5s ease;
+}
+
+.scrap-photo:hover {
+
+    z-index: 20;
+
+    transform:
+        rotate(0deg)
+        translateY(-12px)
+        scale(1.04);
+
+    box-shadow:
+        0 25px 45px rgba(40,25,15,.25);
+
+}
+
+.scrap-photo img {
+
+    transition:
+        filter .5s ease;
+}
+
+.scrap-photo:hover img {
+
+    filter:
+        sepia(.1)
+        saturate(.95)
+        contrast(1);
+
+}
+
+
+/* =========================================================
+   PHOTO FILM GRAIN
+========================================================= */
+
+.cover-photo,
+.timeline-photo,
+.scrap-photo,
+.film-photo,
+.final-photo {
+
+    overflow: hidden;
+}
+
+.cover-photo::before,
+.timeline-photo::before,
+.scrap-photo::before,
+.film-photo::before,
+.final-photo::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 3;
+
+    opacity: .16;
+
+    background-image:
+
+        repeating-radial-gradient(
+            circle at 0 0,
+            rgba(255,255,255,.5) 0,
+            rgba(255,255,255,.5) 1px,
+            transparent 1px,
+            transparent 3px
+        );
+
+    mix-blend-mode: overlay;
+
+}
+
+
+/* =========================================================
+   PHOTO LIGHT LEAK
+========================================================= */
+
+.cover-photo::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 150%;
+
+    height: 30%;
+
+    left: -25%;
+
+    top: 40%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,190,100,.12),
+            transparent
+        );
+
+    transform: rotate(-15deg);
+
+    pointer-events: none;
+
+    animation: lightLeak 8s infinite;
+}
+
+@keyframes lightLeak {
+
+    0% {
+
+        transform:
+            translateX(-40%)
+            rotate(-15deg);
+
+    }
+
+    50% {
+
+        transform:
+            translateX(40%)
+            rotate(-15deg);
+
+    }
+
+    100% {
+
+        transform:
+            translateX(-40%)
+            rotate(-15deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   TYPEWRITER CURSOR
+========================================================= */
+
+.letter-body p {
+
+    position: relative;
+}
+
+.letter-body p::after {
+
+    content: "";
+
+    display: inline-block;
+
+    width: 1px;
+
+    height: 18px;
+
+    background: var(--wine);
+
+    margin-left: 5px;
+
+    vertical-align: middle;
+
+    animation: blinkCursor 1s infinite;
+
+    opacity: .4;
+}
+
+@keyframes blinkCursor {
+
+    50% {
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================================================
+   HANDWRITTEN ANNOTATIONS
+========================================================= */
+
+.timeline-card::after {
+
+    content:
+        "remember this";
+
+    position: absolute;
+
+    right: -70px;
+
+    top: 30px;
+
+    font-family: var(--script);
+
+    font-size: 22px;
+
+    color: var(--wine);
+
+    transform: rotate(-10deg);
+
+    opacity: .5;
+}
+
+.timeline-card.reverse::after {
+
+    content:
+        "one of my favorites";
+
+    left: -130px;
+
+    right: auto;
+
+    transform: rotate(8deg);
+}
+
+
+/* =========================================================
+   HAND-DRAWN ARROWS
+========================================================= */
+
+.timeline-card::before {
+
+    content: "↝";
+
+    position: absolute;
+
+    right: -85px;
+
+    top: 75px;
+
+    font-size: 40px;
+
+    color: var(--wine);
+
+    opacity: .35;
+
+    transform: rotate(-20deg);
+}
+
+.timeline-card.reverse::before {
+
+    left: -85px;
+
+    right: auto;
+
+    transform:
+        scaleX(-1)
+        rotate(-20deg);
+}
+
+
+/* =========================================================
+   OLD NEWSPAPER LABEL
+========================================================= */
+
+.archive-heading::before {
+
+    content:
+        "SPECIAL EDITION";
+
+    display: block;
+
+    width: max-content;
+
+    margin: 0 auto 15px;
+
+    padding: 5px 14px;
+
+    border: 1px solid var(--brown);
+
+    font-family: var(--type);
+
+    font-size: 7px;
+
+    letter-spacing: 3px;
+
+    opacity: .6;
+
+}
+
+
+/* =========================================================
+   PAGE HEADER LINES
+========================================================= */
+
+.archive-title h2,
+.things-header h2,
+.botanical-header h2,
+.memory-heading h2 {
+
+    position: relative;
+
+    display: inline-block;
+}
+
+.archive-title h2::before,
+.archive-title h2::after,
+.things-header h2::before,
+.things-header h2::after,
+.botanical-header h2::before,
+.botanical-header h2::after,
+.memory-heading h2::before,
+.memory-heading h2::after {
+
+    content: "—";
+
+    position: absolute;
+
+    top: 50%;
+
+    color: var(--gold);
+
+    opacity: .6;
+}
+
+.archive-title h2::before,
+.things-header h2::before,
+.botanical-header h2::before,
+.memory-heading h2::before {
+
+    right: 105%;
+
+}
+
+.archive-title h2::after,
+.things-header h2::after,
+.botanical-header h2::after,
+.memory-heading h2::after {
+
+    left: 105%;
+
+}
+
+
+/* =========================================================
+   VINYL LABEL DETAILS
+========================================================= */
+
+.record::before {
+
+    content:
+        "KUSUU • NAAGII • 2022 • LOVE ARCHIVE";
+
+    position: absolute;
+
+    left: 50%;
+    top: 15%;
+
+    transform:
+        translateX(-50%)
+        rotate(-20deg);
+
+    width: 100%;
+
+    text-align: center;
+
+    font-family: var(--type);
+
+    font-size: 7px;
+
+    letter-spacing: 2px;
+
+    color: rgba(255,255,255,.15);
+
+}
+
+
+/* =========================================================
+   CELESTIAL SHOOTING STARS
+========================================================= */
+
+.universe-page::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 130px;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(220,195,140,.8),
+            transparent
+        );
+
+    top: 25%;
+
+    left: -150px;
+
+    transform: rotate(-25deg);
+
+    animation: shootingStar 7s linear infinite;
+
+}
+
+@keyframes shootingStar {
+
+    0% {
+
+        left: -150px;
+
+        opacity: 0;
+
+    }
+
+    10% {
+
+        opacity: 1;
+
+    }
+
+    35% {
+
+        left: 110%;
+
+        opacity: 0;
+
+    }
+
+    100% {
+
+        left: 110%;
+
+        opacity: 0;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOON GLOW
+========================================================= */
+
+.moon-large {
+
+    animation:
+        moonBreath 6s ease-in-out infinite;
+}
+
+@keyframes moonBreath {
+
+    0%,100% {
+
+        box-shadow:
+            0 0 80px rgba(190,160,100,.08);
+
+    }
+
+    50% {
+
+        box-shadow:
+            0 0 140px rgba(190,160,100,.22);
+
+    }
+
+}
+
+
+/* =========================================================
+   BOTANICAL SKETCH LINES
+========================================================= */
+
+.flowers::before {
+
+    content:
+        "✧  BOTANICAL ARCHIVE  ✧";
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 15px;
+
+    transform: translateX(-50%);
+
+    font-family: var(--type);
+
+    font-size: 7px;
+
+    letter-spacing: 4px;
+
+    opacity: .4;
+}
+
+.flowers::after {
+
+    content:
+        "SPECIMEN No. 03";
+
+    position: absolute;
+
+    bottom: 20px;
+
+    right: 30px;
+
+    font-family: var(--type);
+
+    font-size: 7px;
+
+    letter-spacing: 3px;
+
+    opacity: .4;
+}
+
+
+/* =========================================================
+   FLOWER PETAL MOVEMENT
+========================================================= */
+
+.flower .petals {
+
+    animation:
+        flowerBreath 5s ease-in-out infinite;
+}
+
+@keyframes flowerBreath {
+
+    0%,100% {
+
+        transform:
+            rotate(-2deg)
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            rotate(2deg)
+            scale(1.04);
+
+    }
+
+}
+
+
+/* =========================================================
+   MEMORY BOX GOLD DETAILS
+========================================================= */
+
+.memory-box::before,
+.memory-box::after {
+
+    content: "✦";
+
+    position: absolute;
+
+    color: #c2a16d;
+
+    font-size: 25px;
+
+    z-index: 10;
+}
+
+.memory-box::before {
+
+    left: -30px;
+
+    top: 50%;
+
+}
+
+.memory-box::after {
+
+    right: -30px;
+
+    top: 50%;
+
+}
+
+
+/* =========================================================
+   MEMORY ITEM PAPER CARDS
+========================================================= */
+
+.memory-item {
+
+    background:
+        rgba(255,250,230,.25);
+
+    position: relative;
+
+    cursor: pointer;
+
+}
+
+.memory-item:nth-child(odd) {
+
+    transform: rotate(-1deg);
+
+}
+
+.memory-item:nth-child(even) {
+
+    transform: rotate(1.5deg);
+
+}
+
+.memory-item:hover {
+
+    transform:
+        translateY(-8px)
+        rotate(0deg)
+        scale(1.03);
+
+}
+
+
+/* =========================================================
+   ENVELOPE WAX SEAL
+========================================================= */
+
+.envelope::before {
+
+    content:
+        "K";
+
+    position: absolute;
+
+    width: 65px;
+
+    height: 65px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #a6584d,
+            #5d2927
+        );
+
+    color: #e1c9a0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-family: var(--serif);
+
+    font-size: 25px;
+
+    border: 3px solid rgba(50,20,15,.3);
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,.3);
+
+    left: 50%;
+
+    top: 50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    z-index: 7;
+
+    transition: .7s;
+}
+
+.envelope.open::before {
+
+    opacity: 0;
+
+    transform:
+        translate(-50%,-50%)
+        scale(1.5);
+
+}
+
+
+/* =========================================================
+   FINAL PAGE FILM BURN
+========================================================= */
+
+.final-page::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+
+    height: 500px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(170,100,60,.14),
+            transparent 65%
+        );
+
+    left: -150px;
+
+    bottom: -150px;
+
+    filter: blur(20px);
+
+    animation: filmBurn 9s infinite;
+}
+
+@keyframes filmBurn {
+
+    0%,100% {
+
+        transform: scale(1);
+
+    }
+
+    50% {
+
+        transform: scale(1.4);
+
+    }
+
+}
+
+
+/* =========================================================
+   FINAL PHOTO POLAROID
+========================================================= */
+
+.final-photo {
+
+    padding: 12px;
+
+    background: #eee1ca;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.4);
+}
+
+.final-photo::after {
+
+    content:
+        "our favorite chapter";
+
+    position: absolute;
+
+    bottom: -35px;
+
+    left: 0;
+
+    right: 0;
+
+    text-align: center;
+
+    font-family: var(--script);
+
+    color: #d0b98c;
+
+    font-size: 22px;
+}
+
+
+/* =========================================================
+   EXTRA FLOATING FLOWERS
+========================================================= */
+
+body::after {
+
+    content:
+        "✿";
+
+    position: fixed;
+
+    left: 4%;
+
+    top: 60%;
+
+    color: rgba(100,60,45,.16);
+
+    font-size: 50px;
+
+    pointer-events: none;
+
+    z-index: 10;
+
+    animation:
+        floatingDecoration 8s ease-in-out infinite;
+}
+
+@keyframes floatingDecoration {
+
+    0%,100% {
+
+        transform:
+            rotate(-10deg)
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            rotate(15deg)
+            translateY(-25px);
+
+    }
+
+}
+
+
+/* =========================================================
+   PAGE TRANSITION
+========================================================= */
+
+.page {
+
+    animation:
+        pageEnter 1s ease both;
+}
+
+@keyframes pageEnter {
+
+    from {
+
+        opacity: 0;
+
+    }
+
+    to {
+
+        opacity: 1;
+
+    }
+
+}
+
+
+/* =========================================================
+   BETTER MOBILE HANDWRITTEN NOTES
+========================================================= */
+
+@media(max-width:800px) {
+
+    .timeline-card::after,
+    .timeline-card::before {
+
+        display: none;
+
+    }
+
+    .archive-title h2::before,
+    .archive-title h2::after,
+    .things-header h2::before,
+    .things-header h2::after,
+    .botanical-header h2::before,
+    .botanical-header h2::after,
+    .memory-heading h2::before,
+    .memory-heading h2::after {
+
+        display: none;
+
+    }
+
+    .letter-page::before {
+
+        display: none;
+
+    }
+
+    .memory-box::before,
+    .memory-box::after {
+
+        display: none;
+
+    }
+
+}
