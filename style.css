@@ -4936,3 +4936,38 @@ body::after {
     }
 
 }
+/* =========================================================
+   MAGAZINE UNLOCK FLASH
+========================================================= */
+
+.magazine-unlocked::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 99998;
+
+    pointer-events: none;
+
+    background: #f1e4c9;
+
+    animation: antiqueFlash 1.2s ease forwards;
+}
+
+@keyframes antiqueFlash {
+
+    0% {
+        opacity: 0;
+    }
+
+    30% {
+        opacity: .55;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
